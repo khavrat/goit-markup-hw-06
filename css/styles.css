@@ -497,7 +497,8 @@ img {
 
 .form-input:focus {
     color: var(--primary-bg-color);
-    padding-left: 15px;
+    outline: var(--accent-color);
+    padding-left: 16px;
     font-size: 16px;
     line-height: 1.25;
     letter-spacing: 0.03em;
@@ -819,13 +820,11 @@ img {
     transition: fill 250ms var(--cubic-bezier);
 }
 
-.form-entry:hover,
 .form-entry:focus {
     outline: none;
     border: 1px solid var(--accent-color);
 }
 
-.form-entry:hover + .form-icon,
 .form-entry:focus + .form-icon {
     fill: var(--accent-color);
 } 
@@ -837,7 +836,6 @@ img {
     color: currentColor;
 }
 
-.textarea:hover,
 .textarea:focus {
     outline: none;
     border: 1px solid var(--accent-color);
@@ -856,15 +854,18 @@ img {
 } 
 
 .checkbox-label {
+    position: relative;
     margin-bottom: 30px;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: var(--secondary-text-color);
 }
 
-.form-link {
+.checkbox-link {
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
@@ -872,25 +873,42 @@ img {
     color: var(--accent-color);
 }
 
-.icon {
-    display: inline-block;
-    vertical-align: text-top;
+.icon svg{
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 3px;
+    left: 16px;
     width: 16px;
     height: 15px;
-    background-image: url(../bgimg.svg/checkboxoff.svg);
+    border-radius: 2px;
+    background-color: var(--accent-color);
+    background-size: cover;
 } 
 
 .checkbox:focus + .icon {
+   outline: 2px solid var(--accent-color);
+}
+
+.icon {
+    margin-top: -4px;
+    margin-left: -13px;
+    margin-right: 7px;
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--prymary-text-color);
     border-radius: 2px;
-    box-shadow: 0 0 0 0.08em rgb(33, 150, 243),
-        0 0 0 0.05em rgb(33, 150, 243);
+    background-color: var(--primary-bg-color);
+}
+
+.checkbox:checked + .icon svg {
+    visibility: visible;
 }
 
 .checkbox:checked + .icon {
-    width: 16px;
-    height: 15px;
-    box-shadow: none;
-    background-image: url(../bgimg.svg/checkboxon.svg);
+    outline: none;
 }
 
 .button.send {
@@ -914,6 +932,10 @@ img {
 .button.send:hover,
 .button.send:focus {
     background-color: var(--button-hover-color);
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 
 
