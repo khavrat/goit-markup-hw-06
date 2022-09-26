@@ -778,22 +778,6 @@ img {
     color: var(--prymary-text-color);
 }
 
-.form-entry, 
-.textarea {
-    display: block;
-    width: 100%;
-    padding: 11px 12px;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.form-entry {
-    padding-left: 42px;
-    margin-top: 4px;
-    transition: border 250ms var(--cubic-bezier);
-}
-
 .form-marker {
     position: relative;
     display: block;
@@ -810,6 +794,22 @@ img {
 
 .form-marker:last-child {
     margin-bottom: 20px;
+}
+
+.form-entry, 
+.textarea {
+    display: block;
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-entry {
+    padding-left: 42px;
+    margin-top: 4px;
+    transition: border 250ms var(--cubic-bezier);
 }
 
 .form-icon {
@@ -834,6 +834,7 @@ img {
     padding: 12px 16px;
     margin-top: 4px;
     transition: border 250ms var(--cubic-bezier);
+    color: currentColor;
 }
 
 .textarea:hover,
